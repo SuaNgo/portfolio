@@ -1,18 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  mode: "jit",
   theme: {
     extend: {
+      keyframes: {
+        disappear: {
+          "0%": { opacity: 1, transform: "translateX(0)" },
+          "100%": { opacity: 0, transform: "translateX(-2rem)" },
+        },
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        "hero-pattern": "url('/site-bg.jpg')",
+      },
+      fontFamily: {
+        title: "Orbitron",
+        list: "Aldrich",
+        para: "Rajdhani",
+      },
+      animation: {
+        disappear: "disappear 1s both",
       },
     },
   },
-  plugins: [],
-}
+  plugins: [require("tailwindcss-animated")],
+};
