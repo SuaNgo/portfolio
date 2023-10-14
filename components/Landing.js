@@ -7,10 +7,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const Landing = () => {
-  //const showContact = useEffect(()=>{setShow(!show);},[show])
   const [show, setShow] = useState(false);
   const [animation, setAnimation] = useState("hidden");
   const showContact = () => {
